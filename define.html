@@ -3,79 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Definisikan Kata - Definia</title>
+    <title>Cari Definisi - Definia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light">
-    <nav class="navbar shadow-sm">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Definia<span>.</span></a>
+<body class="define-page">
+    <!-- Navigation -->
+    <nav class="navbar navbar-scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>Definia</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="define.html"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="#features"><i class="fa-solid fa-layer-group"></i></a></li>
+                <li><a href="#how-it-works"><i class="fa-solid fa-circle-info"></i></a></li>
+            </ul>
         </div>
     </nav>
 
-    <main class="container section-padding">
-        <section class="search-box card">
-            <div class="form-group">
-                <label><i class="fas fa-search"></i> Cari Kata</label>
-                <input type="text" id="wordInput" placeholder="Contoh: Ionisasi, Metafora, Evolusi..." autocomplete="off">
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-header">
+                <h1>Cari Definisi Kata</h1>
+                <p>Masukkan kata dan pilih bahasa untuk mendapatkan definisi lengkap</p>
             </div>
-            
-            <div class="search-options">
-                <div class="form-group">
-                    <label>Bahasa Utama</label>
-                    <select id="mainLang">
-                        <option value="auto">Auto Detect</option>
-                        <option value="id" selected>Indonesian (id)</option>
-                        <option value="en">English (en)</option>
-                        <option value="ar">Arabic (ar)</option>
-                        <option value="zh">Chinese Mandarin (zh)</option>
-                        <option value="fr">French (fr)</option>
-                        <option value="es">Spanish (es)</option>
-                        <option value="ru">Russian (ru)</option>
-                        <option value="pt">Portuguese (pt)</option>
-                        <option value="de">German (de)</option>
-                        <option value="ja">Japanese (ja)</option>
-                        <option value="ko">Korean (ko)</option>
-                        <option value="hi">Hindi (hi)</option>
-                        <option value="tr">Turkish (tr)</option>
-                        <option value="it">Italian (it)</option>
-                        <option value="nl">Dutch (nl)</option>
-                        <option value="th">Thai (th)</option>
-                        <option value="vi">Vietnamese (vi)</option>
-                        <option value="ms">Malay (ms)</option>
-                        <option value="jv">Javanese (jv)</option>
-                        <option value="su">Sundanese (su)</option>
-                    </select>
+
+            <div class="search-box">
+                <div class="search-input-group">
+                    <div class="input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="wordInput" placeholder="Ketik kata yang ingin dicari..." autocomplete="off">
+                    </div>
+                    <button id="searchBtn" class="btn btn-primary btn-search">
+                        <span>Cari</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label>Terjemahkan Ke (Opsional)</label>
-                    <select id="translateLang">
-                        <option value="">None</option>
-                        <option value="en">English (en)</option>
-                        <option value="id">Indonesian (id)</option>
-                        <option value="jv">Javanese (jv)</option>
-                        <option value="su">Sundanese (su)</option>
+
+                <div class="language-selectors">
+                    <div class="lang-group">
+                        <label for="mainLang">
+                            <i class="fas fa-globe"></i>
+                            Bahasa Utama
+                        </label>
+                        <select id="mainLang">
+                            <option value="auto">Auto Detect</option>
+                            <option value="en">English</option>
+                            <option value="id" selected>Indonesian</option>
+                            <option value="ar">Arabic</option>
+                            <option value="zh">Chinese Mandarin</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="ru">Russian</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="de">German</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="hi">Hindi</option>
+                            <option value="tr">Turkish</option>
+                            <option value="it">Italian</option>
+                            <option value="nl">Dutch</option>
+                            <option value="th">Thai</option>
+                            <option value="vi">Vietnamese</option>
+                            <option value="ms">Malay</option>
+                            <option value="jv">Javanese</option>
+                            <option value="su">Sundanese</option>
                         </select>
+                    </div>
+
+                    <button id="swapLang" class="swap-btn" title="Tukar bahasa">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+
+                    <div class="lang-group">
+                        <label for="translateLang">
+                            <i class="fas fa-language"></i>
+                            Terjemahkan ke
+                        </label>
+                        <select id="translateLang">
+                            <option value="">Tanpa Terjemahan</option>
+                            <option value="en">English</option>
+                            <option value="id">Indonesian</option>
+                            <option value="ar">Arabic</option>
+                            <option value="zh">Chinese Mandarin</option>
+                            <option value="fr">French</option>
+                            <option value="es">Spanish</option>
+                            <option value="ru">Russian</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="de">German</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ko">Korean</option>
+                            <option value="hi">Hindi</option>
+                            <option value="tr">Turkish</option>
+                            <option value="it">Italian</option>
+                            <option value="nl">Dutch</option>
+                            <option value="th">Thai</option>
+                            <option value="vi">Vietnamese</option>
+                            <option value="ms">Malay</option>
+                            <option value="jv" selected>Javanese</option>
+                            <option value="su">Sundanese</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <button id="searchBtn" class="btn btn-primary btn-block">Cari Definisi</button>
-        </section>
 
-        <div id="loading" class="hidden text-center section-padding">
-            <div class="spinner"></div>
-            <p>Menganalisis kata dengan AI...</p>
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+                <p>Mencari definisi...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state hidden">
+                <div class="error-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <h3>Oops! Terjadi Kesalahan</h3>
+                <p id="errorMessage">Tidak dapat menemukan definisi untuk kata tersebut.</p>
+                <button id="retryBtn" class="btn btn-secondary">
+                    <i class="fas fa-redo"></i>
+                    Coba Lagi
+                </button>
+            </div>
+
+            <!-- Results Container -->
+            <div id="resultsContainer" class="results-container hidden">
+                <!-- Main Definition Card -->
+                <div class="result-card main-result">
+                    <div class="result-header">
+                        <div class="word-title">
+                            <h2 id="resultWord">Ionisasi</h2>
+                            <span id="resultType" class="word-type">noun</span>
+                        </div>
+                        <div class="detected-lang">
+                            <i class="fas fa-flag"></i>
+                            <span id="detectedLang">Indonesian</span>
+                        </div>
+                    </div>
+
+                    <div class="result-body">
+                        <div class="meaning-section">
+                            <div class="meaning-block">
+                                <h4>
+                                    <i class="fas fa-book"></i>
+                                    Definisi Resmi
+                                </h4>
+                                <p id="officialMeaning">Proses pembentukan ion dari atom atau molekul yang netral melalui pelepasan atau penangkapan elektron.</p>
+                            </div>
+                            <div class="meaning-block">
+                                <h4>
+                                    <i class="fas fa-lightbulb"></i>
+                                    Definisi Umum
+                                </h4>
+                                <p id="generalMeaning">Ionisasi adalah fenomena perubahan suatu atom atau molekul yang awalnya bermuatan netral menjadi bermuatan listrik karena kehilangan atau mendapatkan elektron.</p>
+                            </div>
+                        </div>
+
+                        <div class="linguistic-section">
+                            <h4>
+                                <i class="fas fa-history"></i>
+                                Informasi Linguistik
+                            </h4>
+                            <div class="linguistic-content">
+                                <div class="etymology">
+                                    <strong>Etimologi:</strong>
+                                    <p id="etymology">Berasal dari kata serapan bahasa Inggris 'ionization'.</p>
+                                </div>
+                                <div class="usage-context">
+                                    <strong>Konteks Penggunaan:</strong>
+                                    <ul id="usageContext">
+                                        <li>Fisika atom</li>
+                                        <li>Kimia analitik</li>
+                                        <li>Teknologi kelistrikan</li>
+                                        <li>Ilmu atmosfer</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h4>
+                                <i class="fas fa-quote-left"></i>
+                                Contoh Penggunaan
+                            </h4>
+                            <ul id="examplesList">
+                                <li>Radiasi ultraviolet dapat menyebabkan ionisasi gas di lapisan atas atmosfer.</li>
+                                <li>Energi ionisasi adalah energi minimal yang dibutuhkan untuk melepaskan elektron terluar.</li>
+                                <li>Proses ionisasi udara digunakan dalam alat pembersih udara modern.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Translation Card -->
+                <div id="translationCard" class="result-card translation-result hidden">
+                    <div class="translation-header">
+                        <i class="fas fa-language"></i>
+                        <h3>Terjemahan</h3>
+                        <span id="translatedLang" class="translated-lang-badge">Javanese</span>
+                    </div>
+                    <div class="translation-body">
+                        <div class="meaning-section">
+                            <div class="meaning-block">
+                                <h4>Definisi Resmi</h4>
+                                <p id="translatedOfficial">Prosès maluné atom utawa molekul sing mauné nétral dadi ion kanthi cara ngculaké utawa nampa èlèktron.</p>
+                            </div>
+                            <div class="meaning-block">
+                                <h4>Definisi Umum</h4>
+                                <p id="translatedGeneral">Ionisasi yaiku kedadéan owahé atom utawa molekul sing mauné nétral dadi duwé muatan listrik amarga kélangan utawa olèh tambahan èlèktron.</p>
+                            </div>
+                        </div>
+
+                        <div class="linguistic-section">
+                            <h4>Informasi Linguistik</h4>
+                            <div class="etymology">
+                                <strong>Etimologi:</strong>
+                                <p id="translatedEtymology">Asalé saka tembung serapan basa Inggris 'ionization'.</p>
+                            </div>
+                            <div class="usage-context">
+                                <strong>Konteks Penggunaan:</strong>
+                                <ul id="translatedUsageContext">
+                                    <li>Fisika atom</li>
+                                    <li>Kimia analitik</li>
+                                    <li>Tèknologi kelistrikan</li>
+                                    <li>Èlmu atmosfer</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="examples-section">
+                            <h4>Contoh Penggunaan</h4>
+                            <ul id="translatedExamples">
+                                <li>Radiasi ultraviolet bisa njalari ionisasi gas ing lapisan dhuwur atmosfer.</li>
+                                <li>Energi ionisasi yaiku ènergi paling sithik sing dibutuhaké kanggo ngculaké èlèktron paling njaba.</li>
+                                <li>Prosès ionisasi hawa digunakaké ing piranti pembersih hawa modhèren.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state">
+                <div class="empty-illustration">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Siap Mencari?</h3>
+                <p>Ketik kata di kolom pencarian di atas untuk mendapatkan definisi lengkap dengan AI.</p>
+                <div class="quick-suggestions">
+                    <span class="suggestion-label">Coba kata:</span>
+                    <button class="suggestion-chip" data-word="ionisasi">Ionisasi</button>
+                    <button class="suggestion-chip" data-word="fotosintesis">Fotosintesis</button>
+                    <button class="suggestion-chip" data-word="demokrasi">Demokrasi</button>
+                    <button class="suggestion-chip" data-word="ekosistem">Ekosistem</button>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div id="errorMessage" class="hidden card error-card">
-            <i class="fas fa-exclamation-circle"></i>
-            <p>Kata tidak ditemukan atau terjadi kesalahan. Silakan coba kata lain.</p>
+    <!-- Footer -->
+    <footer class="footer footer-minimal">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Definia. Dibuat dengan <i class="fas fa-heart"></i> untuk pembelajaran bahasa.</p>
+            </div>
         </div>
-
-        <article id="resultArea" class="hidden">
-            </article>
-    </main>
+    </footer>
 
     <script src="script.js"></script>
 </body>

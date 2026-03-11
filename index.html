@@ -3,86 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Definia | Kamus AI Modern</title>
+    <title>Definia - Kamus Berbasis AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Definia<span>.</span></a>
-            <a href="define.html" class="btn btn-primary nav-cta">Coba Sekarang</a>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-book-open"></i>
+                <span>Definia</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="define.html"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="#features"><i class="fa-solid fa-layer-group"></i></a></li>
+                <li><a href="#how-it-works"><i class="fa-solid fa-circle-info"></i></a></li>
+            </ul>
         </div>
     </nav>
 
-    <header class="hero section-padding">
-        <div class="container hero-content animate-up">
-            <span class="badge">AI-Powered Dictionary</span>
-            <h1>Pahami Setiap Kata <br><span class="text-gradient">Lebih Cepat & Akurat.</span></h1>
-            <p>Definia membantu Anda menemukan pengertian mendalam, konteks linguistik, hingga contoh penggunaan tanpa harus membaca kamus konvensional yang membosankan.</p>
-            <div class="hero-btns">
-                <a href="define.html" class="btn btn-lg btn-primary">Mulai Cari Kata</a>
-                <a href="#features" class="btn btn-lg btn-outline">Pelajari Fitur</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="features" class="section-padding">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
         <div class="container">
-            <div class="section-header">
-                <h2>Fitur Utama</h2>
-                <p>Teknologi cerdas untuk kebutuhan literasi Anda.</p>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Powered by AI</span>
+                </div>
+                <h1 class="hero-title">
+                    Temukan Makna<br>
+                    <span class="gradient-text">Setiap Kata</span>
+                </h1>
+                <p class="hero-description">
+                    Definia adalah kamus cerdas berbasis AI yang membantu Anda memahami kata-kata dengan cepat, lengkap dengan definisi resmi, penjelasan umum, dan terjemahan multi-bahasa.
+                </p>
+                <div class="hero-actions">
+                    <a href="define.html" class="btn btn-primary btn-lg">
+                        <span>Coba Sekarang</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#features" class="btn btn-ghost btn-lg">
+                        <span>Pelajari Lebih</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Bahasa</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">AI</span>
+                        <span class="stat-label">Powered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Gratis</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid-3">
-                <div class="card animate-up">
-                    <i class="fas fa-bolt icon-feature"></i>
-                    <h3>Pencarian Instan</h3>
-                    <p>Dapatkan definisi dalam hitungan detik dengan mesin pencari berbasis AI.</p>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fas fa-language"></i>
+                    <span>Multi Bahasa</span>
                 </div>
-                <div class="card animate-up">
-                    <i class="fas fa-microchip icon-feature"></i>
-                    <h3>Analisis Linguistik</h3>
-                    <p>Bedah etimologi dan konteks penggunaan kata secara mendalam.</p>
+                <div class="floating-card card-2">
+                    <i class="fas fa-bolt"></i>
+                    <span>Instan</span>
                 </div>
-                <div class="card animate-up">
-                    <i class="fas fa-language icon-feature"></i>
-                    <h3>Multi Bahasa</h3>
-                    <p>Dukungan terjemahan dan definisi ke lebih dari 20 bahasa dunia.</p>
+                <div class="floating-card card-3">
+                    <i class="fas fa-brain"></i>
+                    <span>Cerdas</span>
+                </div>
+                <div class="search-preview">
+                    <div class="search-preview-header">
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="search-preview-body">
+                        <div class="preview-input">
+                            <i class="fas fa-search"></i>
+                            <span>Ionisasi</span>
+                        </div>
+                        <div class="preview-result">
+                            <div class="preview-word">Ionisasi <span class="type">noun</span></div>
+                            <div class="preview-meaning">Proses pembentukan ion dari atom...</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="how-it-works section-padding">
+    <!-- Features Section -->
+    <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2>Cara Kerja</h2>
+                <span class="section-tag">Fitur Unggulan</span>
+                <h2 class="section-title">Semua yang Anda Butuhkan</h2>
+                <p class="section-description">Definia menyediakan pengalaman mencari definisi yang komprehensif dan mudah dipahami</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Pencarian Instan</h3>
+                    <p>Temukan definisi kata dalam hitungan detik tanpa perlu membuka kamus tebal yang kompleks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Penjelasan AI</h3>
+                    <p>Dapatkan penjelasan yang mudah dipahami dengan konteks penggunaan yang relevan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Multi Bahasa</h3>
+                    <p>Dukungan untuk 20+ bahasa dunia dengan kemampuan deteksi bahasa otomatis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <h3>Contoh Penggunaan</h3>
+                    <p>Pelajari cara menggunakan kata dalam kalimat dengan contoh nyata dan kontekstual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cara Penggunaan</span>
+                <h2 class="section-title">Simpel dan Cepat</h2>
+                <p class="section-description">Hanya tiga langkah mudah untuk mendapatkan definisi lengkap</p>
             </div>
             <div class="steps">
                 <div class="step">
-                    <div class="step-num">1</div>
-                    <h4>Ketik Kata</h4>
-                    <p>Masukkan kata atau istilah apapun yang ingin Anda pelajari.</p>
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Ketik Kata</h3>
+                    <p>Masukkan kata yang ingin Anda cari definisinya di kolom pencarian.</p>
+                </div>
+                <div class="step-connector">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
                 <div class="step">
-                    <div class="step-num">2</div>
-                    <h4>Pilih Bahasa</h4>
-                    <p>Tentukan bahasa sumber dan bahasa terjemahan jika diperlukan.</p>
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Pilih Bahasa</h3>
+                    <p>Pilih bahasa utama dan bahasa terjemahan yang Anda inginkan.</p>
+                </div>
+                <div class="step-connector">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
                 <div class="step">
-                    <div class="step-num">3</div>
-                    <h4>Lihat Hasil</h4>
-                    <p>Dapatkan penjelasan lengkap, contoh, dan konteks linguistik.</p>
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Lihat Hasil</h3>
+                    <p>Dapatkan definisi lengkap dengan informasi linguistik dan contoh penggunaan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Audience Section -->
+    <section class="audience">
         <div class="container">
-            <p>&copy; 2026 Definia AI. Didesain untuk kecerdasan masa depan.</p>
+            <div class="section-header">
+                <span class="section-tag">Untuk Siapa?</span>
+                <h2 class="section-title">Dibuat untuk Semua</h2>
+                <p class="section-description">Definia membantu berbagai kalangan dalam kebutuhan bahasa mereka</p>
+            </div>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Siswa</h3>
+                    <p>Membantu mengerjakan tugas dan memahami materi pembelajaran dengan definisi yang jelas.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Mahasiswa</h3>
+                    <p>Mendukung penelitian akademik dengan definisi resmi dan referensi linguistik.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h3>Penulis</h3>
+                    <p>Memperkaya kosakata dan memastikan penggunaan kata yang tepat dalam karya tulis.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Pengguna Umum</h3>
+                    <p>Memudahkan siapa saja yang ingin memperluas pengetahuan bahasa sehari-hari.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Siap Mencoba Definia?</h2>
+                <p>Mulai cari definisi kata dengan AI sekarang juga. Gratis dan mudah digunakan.</p>
+                <a href="define.html" class="btn btn-white btn-lg">
+                    <span>Mulai Mencari</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>Definia</span>
+                    </a>
+                    <p>Kamus berbasis AI untuk definisi kata yang cepat, akurat, dan mudah dipahami.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-group">
+                        <h4>Navigasi</h4>
+                        <ul>
+                            <li><a href="index.html">Beranda</a></li>
+                            <li><a href="define.html">Cari Definisi</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-group">
+                        <h4>Fitur</h4>
+                        <ul>
+                            <li><a href="#features">Pencarian Instan</a></li>
+                            <li><a href="#features">Multi Bahasa</a></li>
+                            <li><a href="#features">AI Powered</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Definia. Dibuat dengan <i class="fas fa-heart"></i> untuk pembelajaran bahasa.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
