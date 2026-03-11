@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definisikan Kata - Definia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar shadow-sm">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Definia<span>.</span></a>
+        </div>
+    </nav>
+
+    <main class="container section-padding">
+        <section class="search-box card">
+            <div class="form-group">
+                <label><i class="fas fa-search"></i> Cari Kata</label>
+                <input type="text" id="wordInput" placeholder="Contoh: Ionisasi, Metafora, Evolusi..." autocomplete="off">
+            </div>
+            
+            <div class="search-options">
+                <div class="form-group">
+                    <label>Bahasa Utama</label>
+                    <select id="mainLang">
+                        <option value="auto">Auto Detect</option>
+                        <option value="id" selected>Indonesian (id)</option>
+                        <option value="en">English (en)</option>
+                        <option value="ar">Arabic (ar)</option>
+                        <option value="zh">Chinese Mandarin (zh)</option>
+                        <option value="fr">French (fr)</option>
+                        <option value="es">Spanish (es)</option>
+                        <option value="ru">Russian (ru)</option>
+                        <option value="pt">Portuguese (pt)</option>
+                        <option value="de">German (de)</option>
+                        <option value="ja">Japanese (ja)</option>
+                        <option value="ko">Korean (ko)</option>
+                        <option value="hi">Hindi (hi)</option>
+                        <option value="tr">Turkish (tr)</option>
+                        <option value="it">Italian (it)</option>
+                        <option value="nl">Dutch (nl)</option>
+                        <option value="th">Thai (th)</option>
+                        <option value="vi">Vietnamese (vi)</option>
+                        <option value="ms">Malay (ms)</option>
+                        <option value="jv">Javanese (jv)</option>
+                        <option value="su">Sundanese (su)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Terjemahkan Ke (Opsional)</label>
+                    <select id="translateLang">
+                        <option value="">None</option>
+                        <option value="en">English (en)</option>
+                        <option value="id">Indonesian (id)</option>
+                        <option value="jv">Javanese (jv)</option>
+                        <option value="su">Sundanese (su)</option>
+                        </select>
+                </div>
+            </div>
+            <button id="searchBtn" class="btn btn-primary btn-block">Cari Definisi</button>
+        </section>
+
+        <div id="loading" class="hidden text-center section-padding">
+            <div class="spinner"></div>
+            <p>Menganalisis kata dengan AI...</p>
+        </div>
+
+        <div id="errorMessage" class="hidden card error-card">
+            <i class="fas fa-exclamation-circle"></i>
+            <p>Kata tidak ditemukan atau terjadi kesalahan. Silakan coba kata lain.</p>
+        </div>
+
+        <article id="resultArea" class="hidden">
+            </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
